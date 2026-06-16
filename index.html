@@ -167,6 +167,7 @@ footer a{font-weight:600}
     <a href="#tools">③ 도구·교육 · MCP·스킬</a>
     <a href="#ship">④ 발행 · git 공유</a>
     <a href="#do">⑤ 첫 결과물 · 직접·자랑</a>
+    <a href="#security">🔒 보안 수칙</a>
     <a href="#stuck">막히는 곳</a>
   </nav>
 
@@ -404,10 +405,18 @@ footer a{font-weight:600}
     <!-- ③ MCP & 스킬 -->
     <section id="tools">
       <div class="sec-k">STEP 03</div>
-      <h2>도구·교육 <span class="role">— 기본 장비(자동)와 추가 연결(키 필요)</span></h2>
-      <p class="lead">두 종류입니다. <b>seed가 자동으로 깔아주는 기본 장비</b>(설치하면 바로) + <b>본인이 직접 연결하는 도구</b>(개인 키·계정 필요).</p>
+      <h2>도구·교육 <span class="role">— 스킬(교육)과 MCP(도구 연결)</span></h2>
+      <p class="lead">두 가지를 헷갈리는 경우가 많아 먼저 구분합니다. <b>스킬</b>은 클로드의 능력(노하우), <b>MCP</b>는 외부 도구·계정 연결입니다.</p>
 
-      <h3>① seed가 기본 제공 — 설치하면 바로</h3>
+      <div class="co ac"><span class="lab">먼저 — 스킬 vs MCP, 뭐가 다른가</span>
+        <ul>
+          <li><b>🎓 스킬(Skill) = 노하우·능력 교육.</b> "이 작업은 이렇게 해라"를 묶은 전문 기법 — 브레인스토밍, 디자인, 문서 만들기(pdf·pptx), 리서치. <b>외부 계정 불필요, 설치만</b> 하면 됨. 클로드 <b>자체</b>를 똑똑하게 만드는 것.</li>
+          <li><b>🔌 MCP = 손발·외부 연결.</b> 클로드를 외부 도구·계정에 접속시키는 것 — 이미지 생성기, Notion, Slack, 웹 스크랩. <b>키·로그인 필요.</b> 클로드를 <b>바깥</b>과 잇는 것.</li>
+        </ul>
+        <span class="d">한 줄 요약: <b>스킬 = 클로드가 더 잘하게</b>(계정X) · <b>MCP = 바깥과 연결</b>(계정O).</span>
+      </div>
+
+      <h3>① 스킬·커맨드·에이전트 — seed에 기본 탑재 (능력, 자동)</h3>
       <div class="tbl-wrap">
       <table>
         <tr><th style="width:30%">기능</th><th>무엇 / 어떻게</th></tr>
@@ -420,8 +429,8 @@ footer a{font-weight:600}
       </div>
       <div class="co ok"><span class="lab">✅ 위는 세팅 1줄이면 자동</span>따로 키·로그인 필요 없음. 켜자마자 됩니다.</div>
 
-      <h3>② 본인이 연결 — 개인 키·계정 필요 (MCP)</h3>
-      <p style="font-size:13px;color:var(--muted);margin:2px 0 8px">MCP = 클로드의 손발(외부 도구·계정). 각자 키/로그인이 필요해 <b>기본엔 안 들어갑니다.</b> 필요한 것만 본인이 연결:</p>
+      <h3>② MCP — 외부 도구·계정 연결 (본인이, 키 필요)</h3>
+      <p style="font-size:13px;color:var(--muted);margin:2px 0 8px">각자 키/로그인이 필요해 <b>기본엔 안 들어갑니다.</b> 필요한 것만 본인이 연결:</p>
       <div class="tbl-wrap">
       <table>
         <tr><th style="width:22%">도구</th><th style="width:30%">용도</th><th>연결</th></tr>
@@ -434,12 +443,15 @@ footer a{font-weight:600}
         <tr><td><b>higgsfield</b></td><td>영상·오디오 콘텐츠</td><td>계정</td></tr>
       </table>
       </div>
-      <div class="co ac"><span class="lab">MCP·스킬 추가하는 법</span>
+      <div class="co ac"><span class="lab">🎓 스킬 추가하는 3가지 방법</span>
         <ul>
-          <li><b>MCP 연결</b> — "○○ 연결해줘"라고 말하거나, <code>claude mcp add &lt;이름&gt;</code>, 로그인형은 <code>/mcp</code>에서 OAuth.</li>
-          <li><b>스킬 추가</b> — <code>/plugin</code>으로 마켓플레이스 설치, 또는 잘 된 작업을 <code>/박제</code>·"이 작업 스킬로 만들어줘".</li>
+          <li><b>① 이미 깔린 것 그냥 쓰기</b> — seed에 기본 스킬이 여럿(브레인스토밍·디자인·문서·리서치). 관련 작업을 시키면 <b>자동으로 켜집니다.</b> "pdf로 빼줘" "pptx로"처럼 키워드만 말해도 활성.</li>
+          <li><b>② 마켓플레이스에서 설치</b> — <code>/plugin</code> → 목록에서 방향키로 고르고 Enter. 플러그인 하나에 여러 스킬이 묶여 한 번에 설치됩니다.</li>
+          <li><b>③ 내 업무용으로 직접 만들기</b> — 잘 된 작업을 <b>"이 작업 스킬로 만들어줘"</b> 또는 <code>/박제</code>. 반복 업무를 스킬로 박아두면 다음부턴 한 마디로 끝.</li>
         </ul>
       </div>
+
+      <div class="co ac"><span class="lab">🔌 MCP 추가하는 법</span><b>"○○ 연결해줘"</b>라고 말하거나 <code>claude mcp add &lt;이름&gt;</code>. 로그인형(Notion·Drive·Slack)은 <code>/mcp</code>에서 OAuth. <span class="d">스킬과 달리 <b>키·계정이 필요</b>한 게 차이.</span></div>
 
       <div class="scap"><span class="e">👀</span> 연결도 말로 시키면 됩니다 (예시):</div>
       <div class="term">
@@ -475,6 +487,8 @@ footer a{font-weight:600}
         <li>입력 예: <code>이번 주 보고서 HTML로 빼서 깃헙에 올리고 링크 줘</code></li>
       </ul>
 
+      <div class="co ac"><span class="lab">🔑 처음 한 번 — GitHub 로그인</span><code>git push</code>를 <b>처음</b> 할 때 GitHub 로그인 창(브라우저)이 한 번 뜹니다. <b>회사 공유 GitHub 계정(hizsystem)</b>으로 로그인하세요 — 계정 정보는 <b>슬랙 DM</b>. 한 번 하면 기기에 기억돼서 다음부턴 안 물어봅니다. (Claude 로그인과 같은 공유 계정 방식)</div>
+
       <div class="scap"><span class="e">👀</span> 실제로는 한 마디면 클로드가 3단계를 대신 칩니다 (예시):</div>
       <div class="term">
         <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">claude — 발행</span></div>
@@ -483,7 +497,7 @@ footer a{font-weight:600}
   <span class="c">[✓]</span> <span class="d">git add .</span>
   <span class="c">[✓]</span> <span class="d">git commit -m "6월 3주차 운영보고"</span>
   <span class="c">[✓]</span> <span class="d">git push</span>
-<span class="v">⏺</span> <span class="o">푸시 완료 → github.com/HIZ-Co/내레포. 공개 레포면 HTML이 링크로 바로 열립니다.</span></code></pre>
+<span class="v">⏺</span> <span class="o">푸시 완료 → github.com/hizsystem/내레포. 공개 레포면 HTML이 링크로 바로 열립니다.</span></code></pre>
       </div>
 
       <div class="co warn"><span class="lab">공개 범위 주의</span>링크 공유(웹 열람)는 <b>공개 레포</b>일 때. 클라이언트 기밀·내부 자료는 <b>비공개 레포</b>로. "이거 공개해도 되는 거야?"를 항상 확인.</div>
@@ -519,6 +533,22 @@ footer a{font-weight:600}
       <div class="co ac"><span class="lab">오늘의 결과물 = 둘 중 하나</span><b>내 폴더 CLAUDE.md</b> 또는 <b>반복 업무 /커맨드 1개.</b> 둘 다면 빠른 사람. 만들었으면 git으로 올려 자랑.</div>
     </section>
 
+    <!-- 보안 수칙 -->
+    <section id="security">
+      <div class="sec-k">SECURITY</div>
+      <h2>보안 — 꼭 지킬 것</h2>
+      <p class="lead">Claude·GitHub를 <b>공유 계정</b>으로 함께 쓰는 만큼, 아래는 예외 없이 지켜주세요.</p>
+      <ul class="clean">
+        <li><b>공유 계정 정보는 공개 채널에 올리지 않기.</b> 비밀번호·키는 슬랙 <b>DM</b>으로만. 단톡·공개 채널 평문 공유 금지.</li>
+        <li><b>올리기 전 "공개해도 되나?" 확인.</b> 클라이언트 기밀·개인정보·계약 자료는 반드시 <b>비공개 레포</b>로. 공개 레포 HTML은 URL만 알면 외부에서 열립니다.</li>
+        <li><b>API 키·토큰을 파일·코드·CLAUDE.md에 적어두지 않기.</b> MCP 연결할 때만 입력하고 파일엔 남기지 않기 — 실수로 push되면 그대로 유출됩니다.</li>
+        <li><b><code>--dangerously-skip-permissions</code>(묻지마 모드) 쓰지 않기.</b> 모든 확인을 건너뛰어 위험. 자동승인이 필요하면 <code>/permissions</code>로 안전한 것만 허용.</li>
+        <li><b>공유 GitHub라 누가 올렸는지 구분이 안 됩니다.</b> 커밋 메시지에 본인·작업을 명확히, 남의 레포·자료는 건드리지 않기.</li>
+        <li><b>본인 노트북에서만 로그인.</b> 공용·카페 PC에 공유 계정 로그인 금지(자격증명이 기기에 저장됨).</li>
+      </ul>
+      <div class="co warn"><span class="lab">⚠ 키·계정 유출이 의심되면</span>즉시 슬랙에 알리고 해당 키를 <b>회전(재발급)</b>하세요. 늦을수록 피해가 커집니다.</div>
+    </section>
+
     <!-- 막히는 곳 -->
     <section id="stuck">
       <div class="sec-k">TROUBLESHOOTING</div>
@@ -529,7 +559,8 @@ footer a{font-weight:600}
         <tr><td><code>claude</code>/<code>git</code> 인식 안 됨</td><td>VS Code 완전히 껐다 켜기 → 안 되면 재부팅</td></tr>
         <tr><td>(Win) 스크립트 실행 차단</td><td><code>Set-ExecutionPolicy -Scope Process Bypass</code> 후 다시</td></tr>
         <tr><td>다운로드 / clone 실패</td><td>회사 와이파이 차단 가능 → <b>핫스팟</b>으로</td></tr>
-        <tr><td>로그인 막힘</td><td>공유 계정 정보 슬랙 DM 확인</td></tr>
+        <tr><td>로그인 막힘 (Claude)</td><td>공유 계정 정보 슬랙 DM 확인</td></tr>
+        <tr><td><code>git push</code> 인증/권한 거부</td><td>로그인 창에 <b>회사 공유 GitHub 계정(hizsystem)</b>으로 로그인 (정보 슬랙 DM)</td></tr>
         <tr><td>그 외</td><td>손 들기, 또는 슬랙에 <b>OS 버전 + 에러 화면 캡쳐</b></td></tr>
       </table>
       </div>
