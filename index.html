@@ -422,17 +422,17 @@ footer a{font-weight:600}
     <section id="tools">
       <div class="sec-k">STEP 03</div>
       <h2>도구·교육 <span class="role">— 스킬(교육)과 MCP(도구 연결)</span></h2>
-      <p class="lead">스킬과 MCP는 헷갈리기 쉽습니다. 차이부터 정리합니다. <b>스킬</b>은 클로드의 능력(노하우), <b>MCP</b>는 외부 도구·계정 연결입니다.</p>
+      <p class="lead">두 가지만 구분하면 됩니다 — <b>스킬</b>(클로드의 능력)과 <b>MCP</b>(외부 도구·계정 연결).</p>
 
       <div class="co ac"><span class="lab">스킬과 MCP 차이</span>
         <ul>
-          <li><b>🎓 스킬 = 노하우·능력 교육.</b> "이 작업은 이렇게 해라"를 묶은 전문 기법 — 브레인스토밍, 디자인, 문서 만들기(pdf·pptx), 리서치. 외부 계정 없이 설치만 하면 됩니다. 클로드 자체를 똑똑하게 만드는 것.</li>
-          <li><b>🔌 MCP = 외부 도구·계정 연결.</b> 이미지 생성기, Notion, Slack, 웹 스크랩처럼 클로드를 바깥 서비스에 접속시키는 것. 키·로그인이 필요합니다.</li>
+          <li><b>🎓 스킬 = 노하우·능력 교육.</b> 브레인스토밍·디자인·문서 만들기 같은 "이 작업은 이렇게" 기법. 외부 계정 없이 설치만 하면 됩니다.</li>
+          <li><b>🔌 MCP = 외부 도구·계정 연결.</b> 이미지 생성기·Notion·Slack처럼 클로드를 바깥 서비스에 접속. 키·로그인이 필요합니다.</li>
         </ul>
-        <span class="d">스킬은 계정 없이 클로드 능력을 더하고, MCP는 키·로그인으로 외부 도구를 연결합니다.</span>
       </div>
 
-      <h3>① 스킬·커맨드·에이전트 — seed에 기본 탑재 (능력, 자동)</h3>
+      <h3>🎓 스킬 — 클로드의 능력 (자동 탑재, 계정 불필요)</h3>
+      <p style="font-size:13px;color:var(--muted);margin:2px 0 8px">seed에 기본 탑재돼 설치하면 바로. 관련 작업을 시키면 자동으로 켜집니다.</p>
       <div class="tbl-wrap">
       <table>
         <tr><th style="width:30%">기능</th><th>무엇 / 어떻게</th></tr>
@@ -443,10 +443,17 @@ footer a{font-weight:600}
         <tr><td><b>에이전트·규칙</b></td><td>역할 보조 + HIZ 작업 규칙(톤·팩트원칙 등) 기본 적용</td></tr>
       </table>
       </div>
-      <div class="co ok"><span class="lab">✅ 위는 세팅 1줄이면 자동</span>따로 키·로그인 필요 없음. 켜자마자 됩니다.</div>
+      <div class="co ac"><span class="lab">스킬 추가 방법</span>
+        <ul>
+          <li><b>① 이미 깔린 것 그냥 쓰기</b> — 위 기본 스킬은 관련 작업을 시키면 자동으로 켜집니다. "pdf로 빼줘" "pptx로"처럼 키워드만 말해도 활성.</li>
+          <li><b>② 마켓플레이스에서 설치</b> — <code>/plugin</code> → 목록에서 방향키로 고르고 Enter.</li>
+          <li><b>③ 직접 만들기</b> — 잘 된 작업을 <b>"이 작업 스킬로 만들어줘"</b> 또는 <code>/박제</code>. 반복 업무를 박아두면 다음부턴 한 마디로 끝.</li>
+        </ul>
+        <span class="d">💡 <b>플러그인 = 스킬을 여러 개 담은 '상자'.</b> <code>/plugin</code>에서 고르는 단위는 상자(플러그인)이고, 설치하면 안의 스킬들이 한꺼번에 들어옵니다. 예: <b>superpowers</b> 상자 하나 = 브레인스토밍·디자인 등 스킬 여러 개.</span>
+      </div>
 
-      <h3>② MCP — 외부 도구·계정 연결 (본인이, 키 필요)</h3>
-      <p style="font-size:13px;color:var(--muted);margin:2px 0 8px">각자 키/로그인이 필요해 <b>기본엔 안 들어갑니다.</b> 필요한 것만 본인이 연결:</p>
+      <h3>🔌 MCP — 외부 도구·계정 연결 (필요한 것만, 키 필요)</h3>
+      <p style="font-size:13px;color:var(--muted);margin:2px 0 8px">각자 키/로그인이 필요해 기본엔 안 들어갑니다. 필요한 것만 본인이 연결:</p>
       <div class="tbl-wrap">
       <table>
         <tr><th style="width:22%">도구</th><th style="width:30%">용도</th><th>연결</th></tr>
@@ -459,16 +466,7 @@ footer a{font-weight:600}
         <tr><td><b>higgsfield</b></td><td>영상·오디오 콘텐츠</td><td>계정</td></tr>
       </table>
       </div>
-      <div class="co ac"><span class="lab">🎓 스킬 추가 방법</span>
-        <ul>
-          <li><b>① 이미 깔린 것 그냥 쓰기</b> — seed에 기본 스킬이 여럿(브레인스토밍·디자인·문서·리서치). 관련 작업을 시키면 <b>자동으로 켜집니다.</b> "pdf로 빼줘" "pptx로"처럼 키워드만 말해도 활성.</li>
-          <li><b>② 마켓플레이스에서 설치</b> — <code>/plugin</code> → 목록에서 방향키로 고르고 Enter. 플러그인 하나에 여러 스킬이 묶여 한 번에 설치됩니다.</li>
-          <li><b>③ 내 업무용으로 직접 만들기</b> — 잘 된 작업을 <b>"이 작업 스킬로 만들어줘"</b> 또는 <code>/박제</code>. 반복 업무를 스킬로 박아두면 다음부턴 한 마디로 끝.</li>
-        </ul>
-        <span class="d">💡 <b>플러그인 = 스킬을 여러 개 담은 '상자'.</b> <code>/plugin</code>에서 고르는 단위는 스킬 한 개가 아니라 상자(플러그인)이고, 설치하면 안의 능력(스킬)들이 한꺼번에 들어옵니다. 예: <b>superpowers</b> 상자 하나 = 브레인스토밍·디자인 등 스킬 여러 개.</span>
-      </div>
-
-      <div class="co ac"><span class="lab">🔌 MCP 추가하는 법</span><b>"○○ 연결해줘"</b>라고 말하거나 <code>claude mcp add &lt;이름&gt;</code>. 로그인형(Notion·Drive·Slack)은 <code>/mcp</code>에서 OAuth. <span class="d">스킬과 달리 <b>키·계정이 필요</b>한 게 차이.</span></div>
+      <div class="co ac"><span class="lab">MCP 연결하는 법</span><b>"○○ 연결해줘"</b>라고 말하거나 <code>claude mcp add &lt;이름&gt;</code>. 로그인형(Notion·Drive·Slack)은 <code>/mcp</code>에서 OAuth.</div>
 
       <div class="scap"><span class="e">👀</span> 연결도 말로 시키면 됩니다 (예시):</div>
       <div class="term">
@@ -476,10 +474,7 @@ footer a{font-weight:600}
         <pre><code><span class="c">&gt;</span> 이미지 생성 도구(나노바나나) 연결해줘
 <span class="v">⏺</span> <span class="o">Gemini API 키가 필요해요. 발급해서 키를 붙여넣어 주세요.</span>
 <span class="c">&gt;</span> [키 붙여넣기]
-<span class="v">⏺</span> <span class="o">nanobanana 등록 완료 → 이제 "시안 이미지 만들어줘"처럼 쓰면 됩니다.</span>
-
-<span class="c">&gt;</span> /plugin
-<span class="v">⏺</span> <span class="o">마켓플레이스 스킬 목록이 열립니다 — 방향키로 고르고 Enter로 설치.</span></code></pre>
+<span class="v">⏺</span> <span class="o">nanobanana 등록 완료 → 이제 "시안 이미지 만들어줘"처럼 쓰면 됩니다.</span></code></pre>
       </div>
 
       <div class="co warn"><span class="lab">⚡ 빠른 사람 옵트인 — gstack</span>브라우저 QA·디자인 리뷰·자동 배포까지 묶은 파워 툴셋. 단 <b>1.3GB + Bun 설치 + 별도 빌드</b>라 기본엔 제외. 원하면: <code>git clone --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack &amp;&amp; cd ~/.claude/skills/gstack &amp;&amp; ./setup</code></div>
@@ -501,27 +496,18 @@ footer a{font-weight:600}
         </ul>
       </div>
 
-      <p style="font-size:13.5px;color:var(--ink2)">명령어는 참고용입니다. 실제로는 클로드에게 말로 시킵니다:</p>
-      <div class="term">
-        <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">git — 결과물 발행</span></div>
-        <pre><code><span class="d">$</span> git add .                       <span class="d"># ① 올릴 파일 담기</span>
-<span class="d">$</span> git commit -m <span class="c">"6월 운영보고서"</span>   <span class="d"># ② 📸 중간저장 (내 컴퓨터)</span>
-<span class="d">$</span> git push                        <span class="d"># ③ ☁️ 깃헙으로 올리기 → 링크</span></code></pre>
-      </div>
-      <p style="font-size:12.5px;color:var(--muted);margin:-2px 0 0">입력 예: <code>이번 주 보고서 HTML로 빼서 깃헙에 올리고 링크 줘</code></p>
-
-      <div class="co ac"><span class="lab">🔑 처음 한 번 — GitHub 로그인</span><code>git push</code>를 <b>처음</b> 할 때 GitHub 로그인 창(브라우저)이 한 번 뜹니다. <b>회사 공유 GitHub 계정(hizsystem)</b>으로 로그인하세요 — 계정 정보는 <b>슬랙 DM</b>. 한 번 하면 기기에 기억돼서 다음부턴 안 물어봅니다. (Claude 로그인과 같은 공유 계정 방식)</div>
-
-      <div class="scap"><span class="e">👀</span> 클로드에게 이렇게 말하면 됩니다 (예시):</div>
+      <div class="scap"><span class="e">👀</span> 명령어는 외울 필요 없이, 클로드에게 말로 시킵니다 (예시):</div>
       <div class="term">
         <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">claude — 발행</span></div>
         <pre><code><span class="c">&gt;</span> 이번 주 보고서 HTML로 빼서 깃헙에 올리고 링크 줘
 <span class="v">⏺</span> <span class="o">커밋하고 푸시할게요.</span>
-  <span class="c">[✓]</span> <span class="d">git add .</span>
-  <span class="c">[✓]</span> <span class="d">git commit -m "6월 3주차 운영보고"</span>
-  <span class="c">[✓]</span> <span class="d">git push</span>
+  <span class="c">[✓]</span> <span class="d">git add .          (올릴 파일 담기)</span>
+  <span class="c">[✓]</span> <span class="d">git commit -m "6월 3주차 운영보고"   (📸 중간저장)</span>
+  <span class="c">[✓]</span> <span class="d">git push           (☁️ 깃헙에 올리기)</span>
 <span class="v">⏺</span> <span class="o">푸시 완료 → github.com/hizsystem/내레포. 공개 레포면 HTML이 링크로 바로 열립니다.</span></code></pre>
       </div>
+
+      <div class="co ac"><span class="lab">🔑 처음 한 번 — GitHub 로그인</span>처음 올릴 때 GitHub 로그인 창(브라우저)이 한 번 뜹니다. <b>회사 공유 GitHub 계정(hizsystem)</b>으로 로그인하세요 — 계정 정보는 슬랙 DM. 한 번 하면 기억돼서 다음부턴 안 물어봅니다. (Claude 로그인과 같은 공유 계정 방식)</div>
 
       <div class="scap"><span class="e">👀</span> 푸시하면 깃헙(웹)에 이렇게 올라가 있습니다 (예시):</div>
       <div class="brow">
