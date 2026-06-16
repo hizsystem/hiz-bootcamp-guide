@@ -122,6 +122,22 @@ tr:last-child td{border-bottom:0}
 ul.clean{list-style:none;margin:6px 0} ul.clean li{padding:5px 0 5px 16px;position:relative;color:var(--ink2);font-size:13.5px;line-height:1.6}
 ul.clean li::before{content:"›";position:absolute;left:0;color:var(--ac);font-weight:800}
 
+/* GitHub 브라우저 창 목업 */
+.brow{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:12px 0 14px;background:#fff}
+.brow .bbar{display:flex;align-items:center;gap:7px;padding:8px 12px;background:#eef1f4;border-bottom:1px solid var(--line)}
+.brow .bbar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.brow .bbar .r{background:#ff5f57}.brow .bbar .y{background:#febc2e}.brow .bbar .g{background:#28c840}
+.brow .url{flex:1;margin-left:6px;background:#fff;border:1px solid var(--line2);border-radius:20px;padding:3px 12px;font-family:var(--mono);font-size:11px;color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.brow .bbody{padding:13px 16px}
+.brow .repo-h{font-size:14px;padding-bottom:9px;margin-bottom:4px;border-bottom:1px solid var(--line2)}
+.brow .tag-pub{font-size:10px;font-weight:700;color:var(--ok);border:1px solid #bbf7d0;border-radius:20px;padding:1px 8px;margin-left:6px}
+.brow .ghrow{display:grid;grid-template-columns:160px 1fr auto;gap:10px;padding:7px 2px;border-bottom:1px solid var(--line2);align-items:center;font-size:12.5px}
+.brow .ghrow .gf{font-weight:600;color:var(--ink)}
+.brow .ghrow .gm{color:var(--muted)}
+.brow .ghrow .gt{color:var(--muted);font-size:11px;text-align:right;white-space:nowrap}
+.brow .ghnote{font-size:11.5px;color:var(--ink2);margin-top:11px;line-height:1.65}
+@media(max-width:560px){.brow .ghrow{grid-template-columns:1fr auto;gap:2px 8px}.brow .ghrow .gm{grid-column:1/-1;font-size:11.5px}}
+
 /* 설치 방식 태그 */
 .step .subh{font-size:12.5px;font-weight:800;color:var(--ink);margin:13px 0 3px;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
 .way{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.01em;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap}
@@ -449,6 +465,7 @@ footer a{font-weight:600}
           <li><b>② 마켓플레이스에서 설치</b> — <code>/plugin</code> → 목록에서 방향키로 고르고 Enter. 플러그인 하나에 여러 스킬이 묶여 한 번에 설치됩니다.</li>
           <li><b>③ 내 업무용으로 직접 만들기</b> — 잘 된 작업을 <b>"이 작업 스킬로 만들어줘"</b> 또는 <code>/박제</code>. 반복 업무를 스킬로 박아두면 다음부턴 한 마디로 끝.</li>
         </ul>
+        <span class="d">💡 <b>플러그인 = 스킬을 여러 개 담은 '상자'.</b> <code>/plugin</code>에서 고르는 단위는 스킬 한 개가 아니라 상자(플러그인)이고, 설치하면 안의 능력(스킬)들이 한꺼번에 들어옵니다. 예: <b>superpowers</b> 상자 하나 = 브레인스토밍·디자인 등 스킬 여러 개.</span>
       </div>
 
       <div class="co ac"><span class="lab">🔌 MCP 추가하는 법</span><b>"○○ 연결해줘"</b>라고 말하거나 <code>claude mcp add &lt;이름&gt;</code>. 로그인형(Notion·Drive·Slack)은 <code>/mcp</code>에서 OAuth. <span class="d">스킬과 달리 <b>키·계정이 필요</b>한 게 차이.</span></div>
@@ -472,20 +489,26 @@ footer a{font-weight:600}
     <section id="ship">
       <div class="sec-k">STEP 04</div>
       <h2>발행 <span class="role">— 결과물을 git으로 공유</span></h2>
-      <p class="lead">결과를 터미널에 가둬두지 않고 <b>링크 하나로</b> 공유. 파일 안 던지고, 깃헙(GitHub)에 올리면 끝.</p>
+      <p class="lead">결과를 터미널에 가둬두지 않고 <b>링크 하나로</b> 공유. 클로드가 대신 해주니 <b>개념만</b> 잡으면 됩니다.</p>
 
-      <p style="font-size:13.5px;color:var(--ink2)">흐름은 3단계. 전부 <b>"이거 깃헙에 올려줘"</b> 한 마디면 클로드가 대신 칩니다:</p>
+      <div class="co ac"><span class="lab">먼저 — GitHub(깃헙)이 뭐예요?</span><b>작업물을 올려두는 온라인 저장소.</b> 구글 드라이브와 비슷한데 세 가지가 강점입니다 — ① <b>되돌리기 이력</b>(언제든 과거 시점으로) ② <b>웹 링크 자동 발급</b>(HTML이면 페이지로 바로 열람) ③ <b>팀 공유</b>. "결과물을 깃헙에 올린다" = 이 창고에 올려 <b>공유 링크를 받는다</b>는 뜻.</div>
+
+      <div class="co ac"><span class="lab">커밋 vs 푸시 — 이 둘만 구분하면 됨</span>
+        <ul>
+          <li><b>📸 커밋(commit) = 내 컴퓨터에 "중간저장".</b> 지금 상태에 도장 찍기(되돌리기 지점). 아직 <b>내 컴퓨터 안</b>에만 있습니다.</li>
+          <li><b>☁️ 푸시(push) = 그 저장본을 깃헙(온라인)으로 올려보내기.</b> 이제야 <b>링크로 공유</b> 가능. (드라이브에 업로드하는 것과 같음)</li>
+          <li>왜 둘로 나뉘나? 커밋은 작업하다 자주, 푸시는 공유할 때. <b>외울 필요 없습니다</b> — "깃헙에 올려줘" 한마디면 클로드가 둘 다 해요.</li>
+        </ul>
+      </div>
+
+      <p style="font-size:13.5px;color:var(--ink2)">실제 명령은 3줄(이걸 클로드가 대신 침). 참고로만 보세요:</p>
       <div class="term">
         <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">git — 결과물 발행</span></div>
-        <pre><code><span class="d">$</span> git add .                       <span class="d"># ① 바뀐 파일 담기</span>
-<span class="d">$</span> git commit -m <span class="c">"6월 운영보고서"</span>   <span class="d"># ② 스냅샷 저장(되돌리기 가능)</span>
-<span class="d">$</span> git push                        <span class="d"># ③ 깃헙으로 올리기 → 링크 공유</span></code></pre>
+        <pre><code><span class="d">$</span> git add .                       <span class="d"># ① 올릴 파일 담기</span>
+<span class="d">$</span> git commit -m <span class="c">"6월 운영보고서"</span>   <span class="d"># ② 📸 중간저장 (내 컴퓨터)</span>
+<span class="d">$</span> git push                        <span class="d"># ③ ☁️ 깃헙으로 올리기 → 링크</span></code></pre>
       </div>
-      <ul class="clean">
-        <li><b>커밋(commit)</b> = 작업 중간저장. 망쳐도 이전 시점으로 되돌리기 가능 = 안전벨트.</li>
-        <li><b>푸시(push)</b> = 깃헙에 업로드. HTML이면 <b>링크로 바로 열람</b> 가능 → 클라이언트·팀 공유.</li>
-        <li>입력 예: <code>이번 주 보고서 HTML로 빼서 깃헙에 올리고 링크 줘</code></li>
-      </ul>
+      <p style="font-size:12.5px;color:var(--muted);margin:-2px 0 0">입력 예: <code>이번 주 보고서 HTML로 빼서 깃헙에 올리고 링크 줘</code></p>
 
       <div class="co ac"><span class="lab">🔑 처음 한 번 — GitHub 로그인</span><code>git push</code>를 <b>처음</b> 할 때 GitHub 로그인 창(브라우저)이 한 번 뜹니다. <b>회사 공유 GitHub 계정(hizsystem)</b>으로 로그인하세요 — 계정 정보는 <b>슬랙 DM</b>. 한 번 하면 기기에 기억돼서 다음부턴 안 물어봅니다. (Claude 로그인과 같은 공유 계정 방식)</div>
 
@@ -498,6 +521,18 @@ footer a{font-weight:600}
   <span class="c">[✓]</span> <span class="d">git commit -m "6월 3주차 운영보고"</span>
   <span class="c">[✓]</span> <span class="d">git push</span>
 <span class="v">⏺</span> <span class="o">푸시 완료 → github.com/hizsystem/내레포. 공개 레포면 HTML이 링크로 바로 열립니다.</span></code></pre>
+      </div>
+
+      <div class="scap"><span class="e">👀</span> 푸시하면 깃헙(웹)에 이렇게 올라가 있습니다 (예시):</div>
+      <div class="brow">
+        <div class="bbar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="url">github.com/hizsystem/내레포</span></div>
+        <div class="bbody">
+          <div class="repo-h">📁 <b>hizsystem / 내레포</b> <span class="tag-pub">Public</span></div>
+          <div class="ghrow"><span class="gf">📄 index.html</span><span class="gm">6월 운영보고서</span><span class="gt">방금</span></div>
+          <div class="ghrow"><span class="gf">📄 report-2406.html</span><span class="gm">6월 3주차 운영보고</span><span class="gt">1일 전</span></div>
+          <div class="ghrow"><span class="gf">📄 README.md</span><span class="gm">첫 커밋</span><span class="gt">3일 전</span></div>
+          <div class="ghnote">↑ 파일 옆 회색 글씨 = 내가 <b>커밋</b>할 때 단 메모(커밋 메시지). 이 화면에 보인다는 건 <b>푸시</b>로 깃헙에 올라왔다는 뜻.<br>🔗 HTML 파일은 <code>hizsystem.github.io/내레포/</code> 주소로 바로 열람 — 이 링크를 클라이언트·팀에 공유.</div>
+        </div>
       </div>
 
       <div class="co warn"><span class="lab">공개 범위 주의</span>링크 공유(웹 열람)는 <b>공개 레포</b>일 때. 클라이언트 기밀·내부 자료는 <b>비공개 레포</b>로. "이거 공개해도 되는 거야?"를 항상 확인.</div>
