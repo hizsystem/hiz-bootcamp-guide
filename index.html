@@ -210,7 +210,7 @@ footer a{font-weight:600}
     <section id="prep">
       <div class="sec-k">STEP 00 · 처음이신 분만 (미리 / 설치 레인)</div>
       <h2>준비물 설치 <span class="role">— 아직 아무것도 안 깐 분</span></h2>
-      <p class="lead">5/28에 이미 세팅한 분은 <b>건너뛰고 STEP 01로</b>. 처음이면 위에서부터 4개를 설치하세요. 설치 방식이 세 가지라 단계마다 <b>방식 태그</b>를 붙여뒀습니다 — <span class="way web">🌐 홈페이지</span> 는 사이트에서 받아 더블클릭, <span class="way ext">🧩 VS Code 확장</span> 은 VS Code 안에서 검색·설치, <span class="way cli">⌨ 터미널</span> 은 명령어 붙여넣기.</p>
+      <p class="lead">5/28에 이미 세팅한 분은 <b>건너뛰고 STEP 01로</b>. 처음이면 위에서부터 4개를 설치하세요. 단계마다 <b>방식 태그</b>를 붙여뒀습니다 —<span class="way web">🌐 홈페이지</span> 는 사이트에서 받아 더블클릭, <span class="way ext">🧩 VS Code 확장</span> 은 VS Code 안에서 검색·설치, <span class="way cli">⌨ 터미널</span> 은 명령어 붙여넣기.</p>
 
       <div class="steps">
 
@@ -248,14 +248,11 @@ footer a{font-weight:600}
         <div class="step">
           <div class="sn">4</div>
           <div>
-            <div class="sh">Claude Code <span class="as">= 직원 본체</span> <span class="way ext">🧩 확장</span> <span class="way cli">⌨ 터미널</span></div>
-            <div class="sd">깔 수 있는 길이 둘입니다. <b>오늘 세션은 전부 터미널 기반</b>(아래 STEP 01의 seed 설치 · <code>/커맨드</code> · git 발행)이라 <b>(나) 터미널 설치는 필수</b>. (가) 확장은 채팅창처럼 쓰는 GUI라 추가로 깔면 편합니다.</div>
+            <div class="sh">Claude Code <span class="as">= 직원 본체</span> <span class="way cli">⌨ 터미널</span> <span class="way ext">🧩 확장</span></div>
+            <div class="sd">오늘 세션은 전부 터미널 기반(아래 STEP 01의 seed 설치 · <code>/커맨드</code> · git 발행)이라 <b>터미널 설치가 필수</b>. 확장은 채팅창처럼 쓰는 GUI라 필요하면 추가로 깔면 됩니다.</div>
 
-            <div class="subh"><span class="way ext">🧩 확장</span> (가) GUI 채팅 패널 — 제일 쉬움 · 선택</div>
-            <div class="sd">VS Code 왼쪽 <span class="kbd">확장(Extensions)</span> → 검색창에 <code>Claude Code</code> → 게시자 <b>Anthropic</b> 것 <b>Install</b> → 사이드 패널에서 한국어로 대화. <span class="d">단, 확장만으론 터미널 <code>claude</code> 명령은 안 잡히므로 오늘은 아래 (나)도 꼭.</span></div>
-
-            <div class="subh"><span class="way cli">⌨ 터미널</span> (나) 한 줄 설치 — 오늘 필수</div>
-            <div class="sd do">VS Code <span class="kbd">터미널</span> → <span class="kbd">새 터미널</span>에 본인 OS <b>한 줄</b>을 붙여넣고 <span class="kbd">Enter</span>. (Node.js 같은 거 따로 안 깔아도 이 한 줄이면 끝)</div>
+            <div class="subh"><span class="way cli">⌨ 터미널</span> 한 줄 설치 — 오늘 필수</div>
+            <div class="sd do">VS Code <span class="kbd">터미널</span> → <span class="kbd">새 터미널</span>에 본인 OS 한 줄을 붙여넣고 <span class="kbd">Enter</span>. <b>검은 창에 그대로 붙여넣고 Enter만 누르면 됩니다 — 뜻은 몰라도 됩니다.</b> (Node.js 같은 걸 따로 안 깔아도 이 한 줄이면 끝)</div>
             <div class="os">⊞ Windows · PowerShell</div>
             <div class="term">
               <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">powershell</span></div>
@@ -266,6 +263,9 @@ footer a{font-weight:600}
               <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">bash</span></div>
               <pre><code><span class="d">$</span> curl -fsSL https://claude.ai/install.sh | bash</code></pre>
             </div>
+
+            <div class="subh"><span class="way ext">🧩 확장</span> GUI 채팅 패널 — 선택</div>
+            <div class="sd">VS Code 왼쪽 <span class="kbd">확장(Extensions)</span> → 검색창에 <code>Claude Code</code> → 게시자 <b>Anthropic</b> 것 Install → 사이드 패널에서 한국어로 대화. <span class="d">확장만으론 터미널 <code>claude</code> 명령이 안 잡히므로, 오늘은 위 터미널 설치를 꼭 같이.</span></div>
           </div>
         </div>
 
@@ -278,7 +278,7 @@ footer a{font-weight:600}
     <section id="env">
       <div class="sec-k">STEP 01 · 다 같이 (약 10분)</div>
       <h2>출근시키기 <span class="role">— 환경 켜기</span></h2>
-      <p class="lead">아래 3개를 순서대로 따라 하면 됩니다. 각 단계마다 <b>"이런 화면이 나오면 정상"</b>을 같이 보여드립니다. 화면이 다르면 그 자리에서 손 드세요.</p>
+      <p class="lead">아래 순서대로 따라 하면 됩니다. 각 단계마다 <b>"이런 화면이 나오면 정상"</b>을 같이 보여드립니다. 화면이 다르면 그 자리에서 손 드세요.</p>
 
       <div class="steps">
 
@@ -422,14 +422,14 @@ footer a{font-weight:600}
     <section id="tools">
       <div class="sec-k">STEP 03</div>
       <h2>도구·교육 <span class="role">— 스킬(교육)과 MCP(도구 연결)</span></h2>
-      <p class="lead">두 가지를 헷갈리는 경우가 많아 먼저 구분합니다. <b>스킬</b>은 클로드의 능력(노하우), <b>MCP</b>는 외부 도구·계정 연결입니다.</p>
+      <p class="lead">스킬과 MCP는 헷갈리기 쉽습니다. 차이부터 정리합니다. <b>스킬</b>은 클로드의 능력(노하우), <b>MCP</b>는 외부 도구·계정 연결입니다.</p>
 
-      <div class="co ac"><span class="lab">먼저 — 스킬 vs MCP, 뭐가 다른가</span>
+      <div class="co ac"><span class="lab">스킬과 MCP 차이</span>
         <ul>
-          <li><b>🎓 스킬(Skill) = 노하우·능력 교육.</b> "이 작업은 이렇게 해라"를 묶은 전문 기법 — 브레인스토밍, 디자인, 문서 만들기(pdf·pptx), 리서치. <b>외부 계정 불필요, 설치만</b> 하면 됨. 클로드 <b>자체</b>를 똑똑하게 만드는 것.</li>
-          <li><b>🔌 MCP = 손발·외부 연결.</b> 클로드를 외부 도구·계정에 접속시키는 것 — 이미지 생성기, Notion, Slack, 웹 스크랩. <b>키·로그인 필요.</b> 클로드를 <b>바깥</b>과 잇는 것.</li>
+          <li><b>🎓 스킬 = 노하우·능력 교육.</b> "이 작업은 이렇게 해라"를 묶은 전문 기법 — 브레인스토밍, 디자인, 문서 만들기(pdf·pptx), 리서치. 외부 계정 없이 설치만 하면 됩니다. 클로드 자체를 똑똑하게 만드는 것.</li>
+          <li><b>🔌 MCP = 외부 도구·계정 연결.</b> 이미지 생성기, Notion, Slack, 웹 스크랩처럼 클로드를 바깥 서비스에 접속시키는 것. 키·로그인이 필요합니다.</li>
         </ul>
-        <span class="d">한 줄 요약: <b>스킬 = 클로드가 더 잘하게</b>(계정X) · <b>MCP = 바깥과 연결</b>(계정O).</span>
+        <span class="d">스킬은 계정 없이 클로드 능력을 더하고, MCP는 키·로그인으로 외부 도구를 연결합니다.</span>
       </div>
 
       <h3>① 스킬·커맨드·에이전트 — seed에 기본 탑재 (능력, 자동)</h3>
@@ -459,7 +459,7 @@ footer a{font-weight:600}
         <tr><td><b>higgsfield</b></td><td>영상·오디오 콘텐츠</td><td>계정</td></tr>
       </table>
       </div>
-      <div class="co ac"><span class="lab">🎓 스킬 추가하는 3가지 방법</span>
+      <div class="co ac"><span class="lab">🎓 스킬 추가 방법</span>
         <ul>
           <li><b>① 이미 깔린 것 그냥 쓰기</b> — seed에 기본 스킬이 여럿(브레인스토밍·디자인·문서·리서치). 관련 작업을 시키면 <b>자동으로 켜집니다.</b> "pdf로 빼줘" "pptx로"처럼 키워드만 말해도 활성.</li>
           <li><b>② 마켓플레이스에서 설치</b> — <code>/plugin</code> → 목록에서 방향키로 고르고 Enter. 플러그인 하나에 여러 스킬이 묶여 한 번에 설치됩니다.</li>
@@ -491,7 +491,7 @@ footer a{font-weight:600}
       <h2>발행 <span class="role">— 결과물을 git으로 공유</span></h2>
       <p class="lead">결과를 터미널에 가둬두지 않고 <b>링크 하나로</b> 공유. 클로드가 대신 해주니 <b>개념만</b> 잡으면 됩니다.</p>
 
-      <div class="co ac"><span class="lab">먼저 — GitHub(깃헙)이 뭐예요?</span><b>작업물을 올려두는 온라인 저장소.</b> 구글 드라이브와 비슷한데 세 가지가 강점입니다 — ① <b>되돌리기 이력</b>(언제든 과거 시점으로) ② <b>웹 링크 자동 발급</b>(HTML이면 페이지로 바로 열람) ③ <b>팀 공유</b>. "결과물을 깃헙에 올린다" = 이 창고에 올려 <b>공유 링크를 받는다</b>는 뜻.</div>
+      <div class="co ac"><span class="lab">GitHub(깃헙)이 뭐예요?</span><b>작업물을 올려두는 온라인 저장소.</b> 구글 드라이브와 비슷합니다. 다른 점은 — ① 되돌리기 이력(언제든 과거 시점으로) ② 웹 링크 자동 발급(HTML이면 페이지로 바로 열람) ③ 팀 공유. "결과물을 깃헙에 올린다"는 건 이 창고에 올려 공유 링크를 받는다는 뜻.</div>
 
       <div class="co ac"><span class="lab">커밋 vs 푸시 — 이 둘만 구분하면 됨</span>
         <ul>
@@ -501,7 +501,7 @@ footer a{font-weight:600}
         </ul>
       </div>
 
-      <p style="font-size:13.5px;color:var(--ink2)">실제 명령은 3줄(이걸 클로드가 대신 침). 참고로만 보세요:</p>
+      <p style="font-size:13.5px;color:var(--ink2)">명령어는 참고용입니다. 실제로는 클로드에게 말로 시킵니다:</p>
       <div class="term">
         <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">git — 결과물 발행</span></div>
         <pre><code><span class="d">$</span> git add .                       <span class="d"># ① 올릴 파일 담기</span>
@@ -512,7 +512,7 @@ footer a{font-weight:600}
 
       <div class="co ac"><span class="lab">🔑 처음 한 번 — GitHub 로그인</span><code>git push</code>를 <b>처음</b> 할 때 GitHub 로그인 창(브라우저)이 한 번 뜹니다. <b>회사 공유 GitHub 계정(hizsystem)</b>으로 로그인하세요 — 계정 정보는 <b>슬랙 DM</b>. 한 번 하면 기기에 기억돼서 다음부턴 안 물어봅니다. (Claude 로그인과 같은 공유 계정 방식)</div>
 
-      <div class="scap"><span class="e">👀</span> 실제로는 한 마디면 클로드가 3단계를 대신 칩니다 (예시):</div>
+      <div class="scap"><span class="e">👀</span> 클로드에게 이렇게 말하면 됩니다 (예시):</div>
       <div class="term">
         <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="lbl">claude — 발행</span></div>
         <pre><code><span class="c">&gt;</span> 이번 주 보고서 HTML로 빼서 깃헙에 올리고 링크 줘
@@ -565,7 +565,7 @@ footer a{font-weight:600}
         <li><b>2~3명 화면 공유</b> — "내가 뭘 세팅했나 / 뭘 만들었나"</li>
         <li>막힌 점 공유 · 이후 활용 · 채널 안내</li>
       </ul>
-      <div class="co ac"><span class="lab">오늘의 결과물 = 둘 중 하나</span><b>내 폴더 CLAUDE.md</b> 또는 <b>반복 업무 /커맨드 1개.</b> 둘 다면 빠른 사람. 만들었으면 git으로 올려 자랑.</div>
+      <div class="co ac"><span class="lab">오늘의 결과물</span>내 폴더 <b>CLAUDE.md</b> 또는 반복 업무 <code>/커맨드</code> 1개를 남깁니다. 만들었으면 git으로 올려 공유.</div>
     </section>
 
     <!-- 보안 수칙 -->
@@ -574,14 +574,14 @@ footer a{font-weight:600}
       <h2>보안 — 꼭 지킬 것</h2>
       <p class="lead">Claude·GitHub를 <b>공유 계정</b>으로 함께 쓰는 만큼, 아래는 예외 없이 지켜주세요.</p>
       <ul class="clean">
-        <li><b>공유 계정 정보는 공개 채널에 올리지 않기.</b> 비밀번호·키는 슬랙 <b>DM</b>으로만. 단톡·공개 채널 평문 공유 금지.</li>
-        <li><b>올리기 전 "공개해도 되나?" 확인.</b> 클라이언트 기밀·개인정보·계약 자료는 반드시 <b>비공개 레포</b>로. 공개 레포 HTML은 URL만 알면 외부에서 열립니다.</li>
-        <li><b>API 키·토큰을 파일·코드·CLAUDE.md에 적어두지 않기.</b> MCP 연결할 때만 입력하고 파일엔 남기지 않기 — 실수로 push되면 그대로 유출됩니다.</li>
-        <li><b><code>--dangerously-skip-permissions</code>(묻지마 모드) 쓰지 않기.</b> 모든 확인을 건너뛰어 위험. 자동승인이 필요하면 <code>/permissions</code>로 안전한 것만 허용.</li>
-        <li><b>공유 GitHub라 누가 올렸는지 구분이 안 됩니다.</b> 커밋 메시지에 본인·작업을 명확히, 남의 레포·자료는 건드리지 않기.</li>
-        <li><b>본인 노트북에서만 로그인.</b> 공용·카페 PC에 공유 계정 로그인 금지(자격증명이 기기에 저장됨).</li>
+        <li>공유 계정 정보(비밀번호·키)는 슬랙 <b>DM</b>으로만. 단톡·공개 채널에 평문으로 올리지 않기.</li>
+        <li>올리기 전 "공개해도 되나?" 확인. 클라이언트 기밀·개인정보·계약 자료는 반드시 <b>비공개 레포</b>로. 공개 레포 HTML은 URL만 알면 외부에서 열립니다.</li>
+        <li>비밀번호처럼 생긴 긴 문자열(API 키·토큰)을 파일·코드·CLAUDE.md에 적어두지 않기. MCP 연결할 때만 입력하고, 실수로 올라가면 그대로 유출됩니다.</li>
+        <li>경고를 건너뛰는 <code>--dangerously-skip-permissions</code>(묻지마 모드)는 쓰지 않기. 자동승인이 필요하면 <code>/permissions</code>로 안전한 것만 허용.</li>
+        <li>공유 GitHub라 누가 올렸는지 구분이 안 됩니다. 커밋 메시지에 본인·작업을 적고, 남의 레포·자료는 건드리지 않기.</li>
+        <li>공유 계정은 본인 노트북에서만 로그인. 공용·카페 PC 금지(자격증명이 기기에 저장됨).</li>
       </ul>
-      <div class="co warn"><span class="lab">⚠ 키·계정 유출이 의심되면</span>즉시 슬랙에 알리고 해당 키를 <b>회전(재발급)</b>하세요. 늦을수록 피해가 커집니다.</div>
+      <div class="co warn"><span class="lab">⚠ 키·계정 유출이 의심되면</span>즉시 담당자에게 알리고 해당 키를 <b>재발급</b>하세요. 늦을수록 피해가 커집니다.</div>
     </section>
 
     <!-- 막히는 곳 -->
